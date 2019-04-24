@@ -51,15 +51,15 @@ for t in range(500):
 plt.plot(lossep)
 ```
 
-위와 같은 모델을 pytorch로 구성
-
+위와 같은 모델을 pytorch로 구성  
+[Pytorch: tensor](https://pytorch.org/tutorials/beginner/examples_tensor/two_layer_net_tensor.html#sphx-glr-beginner-examples-tensor-two-layer-net-tensor-py)  
 ```python
 import torch
-
+import matplotlib.pyplot as plt
 
 dtype = torch.float
-device = torch.device("cpu")
-# device = torch.device("cuda:0") # Uncomment this to run on GPU
+#device = torch.device("cpu")
+device = torch.device("cuda:0") # Uncomment this to run on GPU
 
 # N is batch size; D_in is input dimension;
 # H is hidden dimension; D_out is output dimension.
@@ -73,6 +73,8 @@ y = torch.randn(N, D_out, device=device, dtype=dtype)
 w1 = torch.randn(D_in, H, device=device, dtype=dtype)
 w2 = torch.randn(H, D_out, device=device, dtype=dtype)
 
+lossep = []
+
 learning_rate = 1e-6
 for t in range(500):
     # Forward pass: compute predicted y
@@ -82,6 +84,7 @@ for t in range(500):
 
     # Compute and print loss
     loss = (y_pred - y).pow(2).sum().item()
+    lossep.append(loss)
     print(t, loss)
 
     # Backprop to compute gradients of w1 and w2 with respect to loss

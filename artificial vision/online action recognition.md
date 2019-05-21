@@ -51,3 +51,7 @@ Shooting, Stealing, Shoplifting, Vandalism 총 14개
 ![image](https://user-images.githubusercontent.com/33209778/58102440-3e708200-7c1c-11e9-8ab9-9b2fc6367ee1.png)
 - CNN-LSTM 구조와 VAE를 결합  
 ![image](https://user-images.githubusercontent.com/33209778/58102633-8d1e1c00-7c1c-11e9-8fbb-70287cbd6254.png)
+
+## 3. 성능 비교 & 검증
+- THUMOS dataset을 이용한 다른 online action recognition 네트워크 성능들과 비교.
+- UCF crimes dataset에 직접 annotation한 부분과 결과비교
